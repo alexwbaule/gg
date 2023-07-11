@@ -1,43 +1,46 @@
 # Go Graphics
 
+[![Build status](https://builds.sr.ht/~sbinet/gg.svg)](https://builds.sr.ht/~sbinet/gg?)
+[![GoDoc](https://pkg.go.dev/badge/git.sr.ht/~sbinet/gg)](https://pkg.go.dev/git.sr.ht/~sbinet/gg)
+[![godocs.io](https://godocs.io/git.sr.ht/~sbinet/gg?status.svg)](https://godocs.io/git.sr.ht/~sbinet/gg)
+
 `gg` is a library for rendering 2D graphics in pure Go.
 
-![Stars](http://i.imgur.com/CylQIJt.png)
+`git.sr.ht/~sbinet/gg` is a fork of [fogleman/gg](https://github.com/fogleman/gg) which doesn't seem to be maintained (as of January 2022).
+
+![Stars](https://git.sr.ht/~sbinet/gg/blob/main/examples/testdata/stars_golden.png)
 
 ## Installation
 
-    go get -u github.com/fogleman/gg
-
-Alternatively, you may use gopkg.in to grab a specific major-version:
-
-    go get -u gopkg.in/fogleman/gg.v1
+    go get -u git.sr.ht/~sbinet/gg
 
 ## Documentation
 
-- godoc: https://godoc.org/github.com/fogleman/gg
-- pkg.go.dev: https://pkg.go.dev/github.com/fogleman/gg?tab=doc
+- godoc: https://godoc.org/git.sr.ht/~sbinet/gg
+- pkg.go.dev: https://pkg.go.dev/git.sr.ht/~sbinet/gg?tab=doc
 
 ## Hello, Circle!
 
 Look how easy!
 
+[embedmd]:# (examples/circle_example_test.go go /func ExampleCircle/ /\n}/)
 ```go
-package main
+func ExampleCircle() {
+	dc := gg.NewContext(1000, 1000)
+	dc.DrawCircle(500, 500, 400)
+	dc.SetRGB(0, 0, 0)
+	dc.Fill()
 
-import "github.com/fogleman/gg"
-
-func main() {
-    dc := gg.NewContext(1000, 1000)
-    dc.DrawCircle(500, 500, 400)
-    dc.SetRGB(0, 0, 0)
-    dc.Fill()
-    dc.SavePNG("out.png")
+	err := dc.SavePNG("testdata/circle.png")
+	if err != nil {
+		log.Fatalf("could not save to file: %+v", err)
+	}
 }
 ```
 
 ## Examples
 
-There are [lots of examples](https://github.com/fogleman/gg/tree/master/examples) included. They're mostly for testing the code, but they're good for learning, too.
+There are [lots of examples](https://git.sr.ht/~sbinet/gg/tree/main/examples) included. They're mostly for testing the code, but they're good for learning, too.
 
 ![Examples](http://i.imgur.com/tMFoyzu.png)
 
@@ -100,6 +103,8 @@ MeasureMultilineString(s string, lineSpacing float64) (w, h float64)
 WordWrap(s string, w float64) []string
 SetFontFace(fontFace font.Face)
 LoadFontFace(path string, points float64) error
+LoadFontFaceFromBytes(raw []byte, points float64) error
+LoadFontFaceFromFS(fsys fs.FS, path string, points float64) error
 ```
 
 ## Color Functions
@@ -194,18 +199,15 @@ LoadPNG(path string) (image.Image, error)
 SavePNG(path string, im image.Image) error
 ```
 
-![Separator](http://i.imgur.com/fsUvnPB.png)
+![Separator](https://git.sr.ht/~sbinet/gg/blob/main/examples/testdata/sine_golden.png)
 
 ## Another Example
 
 See the output of this example below.
 
+[embedmd]:# (examples/ellipse_example_test.go go /func ExampleEllipse/ /\n}/)
 ```go
-package main
-
-import "github.com/fogleman/gg"
-
-func main() {
+func ExampleEllipse() {
 	const S = 1024
 	dc := gg.NewContext(S, S)
 	dc.SetRGBA(0, 0, 0, 0.1)
@@ -216,8 +218,18 @@ func main() {
 		dc.Fill()
 		dc.Pop()
 	}
-	dc.SavePNG("out.png")
+
+	im, err := gg.LoadImage("testdata/gopher.png")
+	if err != nil {
+		panic(err)
+	}
+	dc.DrawImageAnchored(im, S/2, S/2, 0.5, 0.5)
+
+	err = dc.SavePNG("testdata/ellipse.png")
+	if err != nil {
+		log.Fatalf("could not save to file: %+v", err)
+	}
 }
 ```
 
-![Ellipses](http://i.imgur.com/J9CBZef.png)
+![Ellipses](https://git.sr.ht/~sbinet/gg/blob/main/examples/testdata/ellipse_golden.png)
