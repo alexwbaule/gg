@@ -9,7 +9,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"git.sr.ht/~sbinet/cmpimg"
+	"gonum.org/v1/plot/cmpimg"
 )
 
 func chkimg(fn func(), t *testing.T, fname string) {

@@ -11,7 +11,7 @@ import (
 	"path/filepath"
 	"testing"
 
-	"git.sr.ht/~sbinet/cmpimg"
+	"gonum.org/v1/plot/cmpimg"
 	"golang.org/x/image/font/gofont/goregular"
 	"golang.org/x/image/font/opentype"
 )
