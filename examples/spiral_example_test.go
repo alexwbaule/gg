@@ -9,7 +9,7 @@ import (
 	"math"
 	"testing"
 
-	"git.sr.ht/~sbinet/gg"
+	"github.com/alexwbaule/gg"
 )
 
 func ExampleSpiral() {

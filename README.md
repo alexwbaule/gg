@@ -1,23 +1,23 @@
 # Go Graphics
 
 [![Build status](https://builds.sr.ht/~sbinet/gg.svg)](https://builds.sr.ht/~sbinet/gg?)
-[![GoDoc](https://pkg.go.dev/badge/git.sr.ht/~sbinet/gg)](https://pkg.go.dev/git.sr.ht/~sbinet/gg)
-[![godocs.io](https://godocs.io/git.sr.ht/~sbinet/gg?status.svg)](https://godocs.io/git.sr.ht/~sbinet/gg)
+[![GoDoc](https://pkg.go.dev/badge/github.com/alexwbaule/gg)](https://pkg.go.dev/github.com/alexwbaule/gg)
+[![godocs.io](https://godocs.io/github.com/alexwbaule/gg?status.svg)](https://godocs.io/github.com/alexwbaule/gg)
 
 `gg` is a library for rendering 2D graphics in pure Go.
 
-`git.sr.ht/~sbinet/gg` is a fork of [fogleman/gg](https://github.com/fogleman/gg) which doesn't seem to be maintained (as of January 2022).
+`github.com/alexwbaule/gg` is a fork of [fogleman/gg](https://github.com/fogleman/gg) which doesn't seem to be maintained (as of January 2022).
 
-![Stars](https://git.sr.ht/~sbinet/gg/blob/main/examples/testdata/stars_golden.png)
+![Stars](https://github.com/alexwbaule/gg/blob/main/examples/testdata/stars_golden.png)
 
 ## Installation
 
-    go get -u git.sr.ht/~sbinet/gg
+    go get -u github.com/alexwbaule/gg
 
 ## Documentation
 
-- godoc: https://godoc.org/git.sr.ht/~sbinet/gg
-- pkg.go.dev: https://pkg.go.dev/git.sr.ht/~sbinet/gg?tab=doc
+- godoc: https://godoc.org/github.com/alexwbaule/gg
+- pkg.go.dev: https://pkg.go.dev/github.com/alexwbaule/gg?tab=doc
 
 ## Hello, Circle!
 
@@ -40,7 +40,7 @@ func ExampleCircle() {
 
 ## Examples
 
-There are [lots of examples](https://git.sr.ht/~sbinet/gg/tree/main/examples) included. They're mostly for testing the code, but they're good for learning, too.
+There are [lots of examples](https://github.com/alexwbaule/gg/tree/main/examples) included. They're mostly for testing the code, but they're good for learning, too.
 
 ![Examples](http://i.imgur.com/tMFoyzu.png)
 
@@ -199,7 +199,7 @@ LoadPNG(path string) (image.Image, error)
 SavePNG(path string, im image.Image) error
 ```
 
-![Separator](https://git.sr.ht/~sbinet/gg/blob/main/examples/testdata/sine_golden.png)
+![Separator](https://github.com/alexwbaule/gg/blob/main/examples/testdata/sine_golden.png)
 
 ## Another Example
 
@@ -232,4 +232,4 @@ func ExampleEllipse() {
 }
 ```
 
-![Ellipses](https://git.sr.ht/~sbinet/gg/blob/main/examples/testdata/ellipse_golden.png)
+![Ellipses](https://github.com/alexwbaule/gg/blob/main/examples/testdata/ellipse_golden.png)

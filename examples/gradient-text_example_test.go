@@ -9,7 +9,7 @@ import (
 	"log"
 	"testing"
 
-	"git.sr.ht/~sbinet/gg"
+	"github.com/alexwbaule/gg"
 	"github.com/go-fonts/anton/antonregular"
 )
 

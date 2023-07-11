@@ -5,4 +5,4 @@
 //go:generate go run github.com/campoy/embedmd -w README.md
 
 // Package gg provides a simple API for rendering 2D graphics in pure Go.
-package gg // import "git.sr.ht/~sbinet/gg"
+package gg // import "github.com/alexwbaule/gg"

@@ -9,7 +9,7 @@ import (
 	"math/rand"
 	"testing"
 
-	"git.sr.ht/~sbinet/gg"
+	"github.com/alexwbaule/gg"
 )
 
 func ExampleLines() {

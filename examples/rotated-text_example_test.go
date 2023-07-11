@@ -8,7 +8,7 @@ import (
 	"log"
 	"testing"
 
-	"git.sr.ht/~sbinet/gg"
+	"github.com/alexwbaule/gg"
 	"golang.org/x/image/font/gofont/goregular"
 	"golang.org/x/image/font/opentype"
 )

@@ -8,7 +8,7 @@ import (
 	"log"
 	"testing"
 
-	"git.sr.ht/~sbinet/gg"
+	"github.com/alexwbaule/gg"
 )
 
 func ExampleInvertMask() {
